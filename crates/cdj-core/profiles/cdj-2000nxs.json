@@ -1,0 +1,31 @@
+{
+  "id": "cdj-2000nxs",
+  "name": "CDJ-2000NXS",
+  "source": "Manual de instrucciones CDJ-2000NXS, sección \"Playable music file formats\"",
+  "verified": true,
+  "max_channels": 2,
+  "max_folder_depth": null,
+  "formats": {
+    "mp3": {
+      "extensions": ["mp3"],
+      "variants": [
+        { "label": "MPEG-1 Layer 3", "sample_rates": [32000, 44100, 48000], "bitrate_kbps": [32, 320] },
+        { "label": "MPEG-2 Layer 3", "sample_rates": [16000, 22050, 24000], "bitrate_kbps": [8, 160] }
+      ]
+    },
+    "aac": {
+      "extensions": ["m4a", "aac", "mp4"],
+      "variants": [
+        { "label": "AAC LC", "sample_rates": [16000, 22050, 24000, 32000, 44100, 48000], "bitrate_kbps": [16, 320] }
+      ]
+    },
+    "wav": {
+      "extensions": ["wav"],
+      "variants": [{ "label": "PCM", "sample_rates": [44100, 48000], "bit_depths": [16, 24] }]
+    },
+    "aiff": {
+      "extensions": ["aif", "aiff"],
+      "variants": [{ "label": "PCM", "sample_rates": [44100, 48000], "bit_depths": [16, 24] }]
+    }
+  }
+}

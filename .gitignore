@@ -1,0 +1,9 @@
+node_modules/
+dist/
+target/
+src-tauri/gen/schemas/
+# FFmpeg se descarga con `npm run fetch-ffmpeg`
+src-tauri/binaries/*
+!src-tauri/binaries/.gitkeep
+.DS_Store
+*.log
