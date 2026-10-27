@@ -100,6 +100,11 @@ async function main() {
     } else if (target === "universal-apple-darwin") {
       const arm = await fetchBinary(SOURCES.macArm64, "ffmpeg", work);
       const x64 = await fetchBinary(SOURCES.macX64, "ffmpeg", work);
+      // Tauri compila cada arquitectura por separado y busca también su propio sidecar.
+      copyFileSync(arm, join(outDir, "ffmpeg-aarch64-apple-darwin"));
+      copyFileSync(x64, join(outDir, "ffmpeg-x86_64-apple-darwin"));
+      chmodSync(join(outDir, "ffmpeg-aarch64-apple-darwin"), 0o755);
+      chmodSync(join(outDir, "ffmpeg-x86_64-apple-darwin"), 0o755);
       execFileSync("lipo", ["-create", arm, x64, "-output", dest], { stdio: "inherit" });
       // lipo invalida las firmas: firma ad-hoc para que Apple Silicon lo ejecute.
       execFileSync("codesign", ["--force", "--sign", "-", dest], { stdio: "inherit" });
