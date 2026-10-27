@@ -1,0 +1,130 @@
+{
+  "id": "cdj-3000",
+  "name": "CDJ-3000",
+  "source": "Manual de instrucciones CDJ-3000, sección \"Supported file formats\"",
+  "verified": true,
+  "max_channels": 2,
+  "max_folder_depth": 8,
+  "formats": {
+    "mp3": {
+      "extensions": [
+        "mp3"
+      ],
+      "variants": [
+        {
+          "label": "MPEG-1 Layer 3",
+          "sample_rates": [
+            44100,
+            48000
+          ],
+          "bitrate_kbps": [
+            32,
+            320
+          ]
+        }
+      ]
+    },
+    "aac": {
+      "extensions": [
+        "m4a",
+        "aac",
+        "mp4"
+      ],
+      "variants": [
+        {
+          "label": "AAC LC",
+          "sample_rates": [
+            44100,
+            48000
+          ],
+          "bitrate_kbps": [
+            16,
+            320
+          ]
+        }
+      ]
+    },
+    "wav": {
+      "extensions": [
+        "wav"
+      ],
+      "variants": [
+        {
+          "label": "PCM",
+          "sample_rates": [
+            44100,
+            48000,
+            88200,
+            96000
+          ],
+          "bit_depths": [
+            16,
+            24
+          ]
+        }
+      ]
+    },
+    "aiff": {
+      "extensions": [
+        "aif",
+        "aiff"
+      ],
+      "variants": [
+        {
+          "label": "PCM",
+          "sample_rates": [
+            44100,
+            48000,
+            88200,
+            96000
+          ],
+          "bit_depths": [
+            16,
+            24
+          ]
+        }
+      ]
+    },
+    "flac": {
+      "extensions": [
+        "flac",
+        "fla"
+      ],
+      "variants": [
+        {
+          "label": "FLAC",
+          "sample_rates": [
+            44100,
+            48000,
+            88200,
+            96000
+          ],
+          "bit_depths": [
+            16,
+            24
+          ]
+        }
+      ]
+    },
+    "alac": {
+      "extensions": [
+        "m4a"
+      ],
+      "variants": [
+        {
+          "label": "ALAC",
+          "sample_rates": [
+            44100,
+            48000,
+            88200,
+            96000
+          ],
+          "bit_depths": [
+            16,
+            24
+          ]
+        }
+      ]
+    }
+  }
+}

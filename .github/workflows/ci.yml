@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  core:
+    name: Núcleo (Rust)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - name: Formato
+        run: cargo fmt -p cdj-core --check
+      - name: Clippy
+        run: cargo clippy -p cdj-core --all-targets -- -D warnings
+      - name: Pruebas (incluye conversión real con FFmpeg)
+        run: cargo test -p cdj-core
+
+  frontend:
+    name: Interfaz (React)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
